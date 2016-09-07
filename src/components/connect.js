@@ -43,6 +43,7 @@ export default function(collect) {
           const state = collect(store.getState());
 
           Object.keys(state).forEach((key) => { // fixme: use a simple loop
+            // fixme: what if the key did not exist
             this[key] = state[key]
           });
         });

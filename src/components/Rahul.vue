@@ -1,5 +1,5 @@
 <template lang="html">
-  rahul {{msg}}
+  rahul {{name}}
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
   attached() {},
   methods: {},
   components: {},
-  props: ['msg']
+  props: ['name']
 };
 </script>
 
