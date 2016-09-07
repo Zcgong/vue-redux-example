@@ -6,6 +6,6 @@ Vue.config.devtools = true
 
 /* eslint-disable no-new */
 new Vue({
-  el: 'body',
+  el: '#main',
   components: { App }
 })
