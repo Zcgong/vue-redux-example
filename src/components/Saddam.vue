@@ -1,5 +1,7 @@
 <template lang="html">
-  hello world from saddam
+  <div>
+    hello world from saddam
+  </div>
 </template>
 
 <script>

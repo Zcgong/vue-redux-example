@@ -1,5 +1,7 @@
 <template lang="html">
+<div>
   rifat
+</div>
 </template>
 
 <script>

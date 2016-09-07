@@ -1,5 +1,7 @@
 <template lang="html">
-  rahul {{name}}
+  <div>
+    rahul {{name}}
+  </div>
 </template>
 
 <script>
