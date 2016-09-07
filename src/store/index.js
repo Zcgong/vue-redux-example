@@ -11,11 +11,7 @@
 
  */
 
-import {
-    createStore,
-    applyMiddleware,
-    compose
-} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './../reducer';
 import thunk from 'redux-thunk';
 
@@ -27,21 +23,21 @@ const middleware = [thunk];
 let extension = next => next;
 
 if (process.env.NODE_ENV !== 'production') {
-    // In development environment
-    // middleware.push(require('redux-logger')());
-    extension = window.devToolsExtension ? window.devToolsExtension() : extension;
+  // In development environment
+  // middleware.push(require('redux-logger')());
+  extension = window.devToolsExtension ? window.devToolsExtension() : extension;
 }
 // Create Store
 const store = createStore(
-    reducer,
-    initialState,
-    compose(applyMiddleware(...middleware), extension)
+  reducer,
+  initialState,
+  compose(applyMiddleware(...middleware), extension)
 );
 // Hot Reducer
 if (module.hot) {
-    module.hot.accept('./../reducer', () =>
-        store.replaceReducer(require('./../reducer').default)
-    );
+  module.hot.accept('./../reducer', () =>
+    store.replaceReducer(require('./../reducer').default)
+  );
 }
 
 export default store;

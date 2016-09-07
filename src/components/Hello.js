@@ -3,31 +3,32 @@ import Rifat from './Rifat';
 import Saddam from './Saddam';
 import hoc from './hoc';
 
+// import store from '../store';
+
 const component = {
   components: { Rahul, Rifat, Saddam },
   props: ['msg', 'list', 'name'],
   template: `<div>
-  {{ name }}
-  <div class="hello">
-    <h1>{{ msg }}!!</h1>
-    <p @click="dontClickMe"> {{ test }} </p>
-  </div>
-  <div>
-    <rahul name='rahul'></rahul> <br>
-    <rifat> </rifat> <br>
-    <saddam> </saddam>
-  </div>
-  <div></div>
+    {{ name }}
+    <div class="hello">
+      <h1>{{ msg }}!!</h1>
+      <p v-on:click="dontClickMe"> {{ test }} </p>
+    </div>
+    <div>
+      <rahul name='rahul'></rahul> <br>
+      <rifat> </rifat> <br>
+      <saddam> </saddam>
+    </div>
 </div>`,
 
-  data() {
+  data () {
     return {
       test: 'testing....'
     };
   },
 
   methods: {
-    dontClickMe() {
+    dontClickMe () {
       console.log(this.msg);
     }
   }
@@ -36,11 +37,10 @@ const component = {
 const mapStateAsProps = (state) => {
   return {
     msg: state.app.msg,
-    list: state.app.list,
+    list: state.app.list
   }
 };
 
-// import connect from './connect';
 export default hoc(mapStateAsProps)(component);
 // export default connect(mapStateAsProps)(component);
 // export default component;
